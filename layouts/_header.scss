@@ -1,0 +1,10 @@
+header
+{
+    height:150px;
+    @include text--center();
+    justify-content: center;
+}
+header,.reserve,nav,ul
+{
+    @include text--center(); 
+}

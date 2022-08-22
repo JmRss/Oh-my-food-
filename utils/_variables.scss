@@ -1,0 +1,16 @@
+$color_primary:#9356DC;
+$color_secondary:#FF79DA;
+$color_tertiary:#99E2D0;
+$background:#f6f6f6;
+$fontsizebody:50px;
+
+@mixin text--center
+{
+    display:flex;
+    align-items: center;
+    flex-direction:column;
+}
+@mixin shadow
+{
+    box-shadow: darken($color: $background, $amount: 20%) 0px 15px 20px;
+}
