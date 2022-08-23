@@ -1,9 +1,8 @@
 $color_primary:#9356DC;
 $color_secondary:#FF79DA;
 $color_tertiary:#99E2D0;
-$background:#f6f6f6;
+$color_background:#f6f6f6;
 $fontsizebody:50px;
-
 @mixin text--center
 {
     display:flex;
@@ -12,5 +11,29 @@ $fontsizebody:50px;
 }
 @mixin shadow
 {
-    box-shadow: darken($color: $background, $amount: 20%) 0px 15px 20px;
+    box-shadow: darken($color: $color_background, $amount: 20%) 0px 15px 20px;
+}
+@mixin card
+{
+    display:block;
+    width:90%;
+    height:660px;
+    background-color:white;
+    border-radius: 40px;
+    margin:auto;
+    text-decoration: none;
+    color:black;
+}
+@mixin new /* icone text "Nouveau" */
+{   
+    display: flex;
+    color: darken($color: $color_tertiary, $amount: 35%);
+    background-color: $color_tertiary;
+    border-radius: 5px;
+    width:220px;
+    height:75px;
+    font-size: 40px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
 }

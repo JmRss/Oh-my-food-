@@ -1,0 +1,47 @@
+.button /* bouton avec dégradé couleur*/
+{
+    color: $color_background;
+    background:linear-gradient(to bottom right,$color_secondary,$color_primary);
+    border-radius: 100px;
+    height:130px;
+    margin-top:30px;
+    width:600px;
+    font-size: 44px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    @include shadow;
+} 
+.card /* bloc avec photo restaurant et texte, dans "Restaurant" */
+{
+    @include card;
+    @include shadow;
+    margin-top: 50px;
+}
+.card img
+{
+    height: 70%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 40px 40px 0px 0px;
+    box-sizing: border-box;
+}
+.card_text
+{ 
+    padding-left: 40px;
+    padding-top: 25px;
+    position: relative;
+}
+.new /* icone "nouveau" */ 
+{
+    @include new;
+    left:70%;
+}
+.section /*conteneur des bloc card */
+{
+    @include text--center;
+    background-color: $color_background;
+    margin-top: 130px;
+    padding-bottom: 170px;
+    padding-top:50px;
+}

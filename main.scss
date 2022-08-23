@@ -1,0 +1,135 @@
+@import "./Base/fonts";
+@import "./utils/variables";
+@import "./layouts/header";
+@import "./components/component";
+body
+{
+    font-family:"roboto";
+    font-size:$fontsizebody;
+    width:100%;
+    height:auto;
+    margin:0%;
+}
+h3 /* titre "Fonctionnement" */
+{
+    width:90%;
+    margin-top: 100px;
+    margin-bottom: 0%;
+}
+h4
+{
+    margin:0%;
+}
+form,input[type="text"] /*zone de recherche restaurant*/
+{
+    width:100%;
+    height:120px;
+    background-color: darken($color: $color_background, $amount: 5%);
+    border:none;
+    outline: none;
+    font-size: 44px;
+    
+}
+input::placeholder 
+{
+    font-size:44px;
+    color:darken($color: $color_background, $amount: 60%);
+    text-align: center;
+    font-weight: bold;
+   
+}
+article /* bloc contentant: recherchez le menu qui vous convient */
+{
+    background-color: $color_background;
+    height:870px;
+    text-align: center;
+}
+article p
+{
+    color:darken($color: $color_background, $amount: 50%)
+}
+h2 /* titre : "Réservez le menu[...]"*/
+{
+    padding-left:20%;
+    padding-right:20%;
+    padding-top: 50px;
+    margin-bottom:0%;
+}
+h2, h3
+{
+    font-size: 65px;
+}
+#local /*bordure interieur barre recherche */
+{
+    box-shadow: inset darken($color: $color_background, $amount: 20%) 0px 5px 10px;
+}
+nav,ul
+{
+    width:100%;
+    padding-left: 0%;
+}
+ul li /* conteneur de chaque case "Fonctionnement" */
+{
+    list-style-type: none; 
+    display: inline-flex;
+    width:85%;
+    height:180px;
+    background-color: $color_background ;
+    align-items: center;
+    border-radius: 50px;
+    @include shadow;
+    font-size: 45px;
+    font-weight: bold; 
+    overflow: inherit;
+
+}
+ul
+{
+    height:650px;
+    justify-content: space-between;
+    
+}
+.puce
+{
+    font-size: 40px;
+    height:65px;
+    width:65px;
+    border-radius: 100%;
+    background-color: $color_primary;
+    color:$color_background;
+    @include text--center();
+    justify-content: center; 
+    position: relative;
+    left:-25px;
+}
+nav i /*icones menu "fonctionnement"*/
+{
+    color:darken($color: $color_background, $amount: 30%)
+}
+.puce,nav i
+{
+    margin-right: 20px;
+}
+li h4  /* texte des titres dans "fonctionnement" */
+{
+    
+    margin-left:40px;
+}
+label i /*icone localisation */
+{
+    position:absolute;
+    left:26%;
+    top:210px;
+    color: darken($color: $color_background, $amount: 75%)
+}
+.card_text p
+{
+    margin-top:5px;
+}
+.card_text i
+{
+    position: absolute;
+    left:80%;
+    bottom:30%;
+    font-size: 65px;
+}

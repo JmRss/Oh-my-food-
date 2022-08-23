@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="./css/main.scss"/>
-        <link rel="stylesheet" href="./css/main.css"/>
+        <link rel="stylesheet" href="main.scss"/>
+        <link rel="stylesheet" href="main.css"/>
         <script src="https://kit.fontawesome.com/2e02796ae7.js" crossorigin="anonymous"></script>
 
         <title>
@@ -12,13 +12,14 @@
     </head>
     <body>
         <header>  
-            <img class="logo" src="images/ohmyfood.png" alt="logo"/>
+            <img src="images/ohmyfood.png" alt="logo"/>
         </header>
 
         <article class="reserve">  <!--Bloc: Réservez -->
             <form id="form" method="post" action="#">
                 <label for="local">
-                    <input type="text" id="local" name="local"  placeholder="Paris, Belleville">
+                    <i class="fa-solid fa-location-dot fa-sm"></i> <!--Icone localisation-->
+                    <input type="text" id="local" name="local" size="50" placeholder="Paris, Belleville">
                 </label>
             </form>
         
@@ -29,45 +30,55 @@
         <nav>
             <h3>Fonctionnement</h3> <!-- bloc: Selection-->
             <ul>
-                <li><span class="puce">1</span><i class="fa-solid fa-mobile-screen-button"></i>Choisissez un restaurant</li>
-                <li><span class="puce">2</span><i class="fa-solid fa-bars"></i>Composez votre menu</li>
-                <li><span class="puce">3</span><i class="fa-solid fa-store"></i>Dégustez au restaurant</li>
+                <li><span class="puce">1</span><i class="fa-solid fa-mobile-screen-button"></i><h4>Choisissez un restaurant</h4></li>
+                <li><span class="puce">2</span><i class="fa-solid fa-bars"></i><h4>Composez votre menu</h4></li>
+                <li><span class="puce">3</span><i class="fa-solid fa-store"></i><h4>Dégustez au restaurant</h4></li>
             </ul>
         </nav>
         <section class="section">
             <h3>Restaurants</h3>
-            <a href="#">
+            <a href="#" class="card">
                 <img src="images/menilmontant.jpg" alt="photo restaurant" class="Menilmontant">
-                <p>Nouveau</p>
+            <div class="card_text">
+                <span class="new">Nouveau</span>
                 <h4>La palette du goût</h4>
+                <i class="fa-regular fa-heart"></i> <!--icone coeur-->
                 <p>Ménilmontant</p>
+            </div>
             </a>
-            <a href="#">
+            <a href="#" class="card">
                 <img src="images/charonne.jpg" alt="photo restaurant" class="Charonne">
-                <p>Nouveau</p>
-                <h4>La palette du goût</h4>
-                <p>Ménilmontant</p>
-            </a><a href="#">
+                <span class="new">Nouveau</span>
+            <div class="card_text">
+                <h4>La note enchantée</h4>
+                <i class="fa-regular fa-heart"></i> <!--icone coeur-->
+                <p>Charonne</p>
+            </div>
+            </a>
+            <a href="#" class="card">
                 <img src="images/cite.jpg" alt="photo restaurant" class="Citerouge">
-                <p>Nouveau</p>
-                <h4>La palette du goût</h4>
-                <p>Ménilmontant</p>
-            </a><a href="#">
+            <div class="card_text">
+                <h4>À la française</h4>
+                <i class="fa-regular fa-heart"></i> <!--icone coeur-->
+                <p>Cité Rouge</p>
+            </div>
+            </a>
+            <a href="#" class="card">
                 <img src="images/folie.jpg" alt="photo restaurant" class="Folie">
-                <p>Nouveau</p>
-                <h4>La palette du goût</h4>
-                <p>Ménilmontant</p>
+            <div class="card_text">
+                <h4>Le délice des sens</h4>
+                <i class="fa-regular fa-heart"></i> <!--icone coeur-->
+                <p>Folie-Méricourt</p>
+            </div>
             </a>
         </section>
         
         <footer>
-            <ul>
-                <img class="logo logo--small" src="images/ohmyfood.png" alt="logo"/>
-                <li>Proposer un restaurant</li>
-                <li>Devenir partenaire</li>
-                <li>Mentions légales</li>
-                <li>Contact</li>
-            </ul>
+                <img class="logo_footer" src="images/ohmyfood.png" alt="logo"/>
+                <h4>Proposer un restaurant</h4>
+                <h4>Devenir partenaire</h4>
+                <h4>Mentions légales</h4>
+                <h4>Contact</h4>
         </footer>
     </body>
 </html>
