@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "shrikhand";
   src: url("./fonts/Shrikhand-Regular.ttf");
@@ -46,6 +47,10 @@ footer {
   align-items: center;
   box-shadow: #c3c3c3 0px 15px 20px;
 }
+.button:hover {
+  filter: brightness(1.2);
+  box-shadow: #777777 0px 15px 20px;
+}
 
 .card {
   display: block;
@@ -66,7 +71,6 @@ footer {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 40px 40px 0px 0px;
-  box-sizing: border-box;
 }
 
 .card_text {
@@ -86,10 +90,15 @@ footer {
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  left: 70%;
+  position: absolute;
+  left: 69%;
+  top: 137.5%;
+}
+.new--card-two {
+  top: 178%;
 }
 
-.section {
+section {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -97,6 +106,22 @@ footer {
   margin-top: 130px;
   padding-bottom: 170px;
   padding-top: 50px;
+}
+
+.link_new::before {
+  content: "Nouveau"; /* écrit le texte dans le css directement"*/
+  display: flex;
+  color: #2c9c81;
+  background-color: #99E2D0;
+  border-radius: 5px;
+  width: 220px;
+  height: 75px;
+  font-size: 40px;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  transform: translate(285%, 50%); /* déplace le texte par rapport à son élément parent */
+  position: absolute;
 }
 
 body {
@@ -237,6 +262,6 @@ label i {
 .card_text i {
   position: absolute;
   left: 80%;
-  bottom: 30%;
+  bottom: 25%;
   font-size: 65px;
 }/*# sourceMappingURL=main.css.map */

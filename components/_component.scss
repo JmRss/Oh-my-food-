@@ -11,6 +11,11 @@
     justify-content: center;
     align-items: center;
     @include shadow;
+        &:hover
+        {
+            filter:brightness(1.20);
+            box-shadow:darken($color: $color_background, $amount: 50%) 0px 15px 20px;
+        }
 } 
 .card /* bloc avec photo restaurant et texte, dans "Restaurant" */
 {
@@ -24,7 +29,6 @@
     width: 100%;
     object-fit: cover;
     border-radius: 40px 40px 0px 0px;
-    box-sizing: border-box;
 }
 .card_text
 { 
@@ -32,16 +36,31 @@
     padding-top: 25px;
     position: relative;
 }
+
 .new /* icone "nouveau" */ 
 {
     @include new;
-    left:70%;
+    position: absolute;
+    left:69%;
+    top:137.5%;
+    &--card-two
+    {
+        top:178%;
+    }
 }
-.section /*conteneur des bloc card */
+section /*conteneur des bloc card */
 {
     @include text--center;
     background-color: $color_background;
     margin-top: 130px;
     padding-bottom: 170px;
     padding-top:50px;
+}
+
+.link_new::before /* tag "nouveau"*/
+{   
+    content:'Nouveau'; /* écrit le texte dans le css directement"*/
+    @include new;
+    transform: translate(285%,50%); /* déplace le texte par rapport à son élément parent */
+    position: absolute;
 }
