@@ -1,4 +1,4 @@
-.button /* bouton avec dégradé couleur*/
+.btn /* bouton avec dégradé couleur*/
 {
     color: $color_background;
     background:linear-gradient(to bottom right,$color_secondary,$color_primary);
@@ -16,19 +16,62 @@
             filter:brightness(1.20);
             box-shadow:darken($color: $color_background, $amount: 50%) 0px 15px 20px;
         }
+    &--menu
+    {
+        width:480px;
+        margin-top: 120px;
+    }
 } 
 .card /* bloc avec photo restaurant et texte, dans "Restaurant" */
 {
     @include card;
     @include shadow;
     margin-top: 50px;
+    
+    &--menu /*modifier de card pour les pages "menu"*/
+    {
+        height:175px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        
+        & h3 
+        {
+            font-size: 48px;
+            width:100%;
+            height:50px;
+            margin:0%;
+            padding-top: 30px;
+        }
+        & p
+        {
+            margin:0%;
+            padding-bottom:30px;
+            padding-top:15px;
+            padding-right: 50px;
+            color:darken($color: $color-background, $amount: 65%)
+        }
+        & p,& h3 
+        {
+            padding-left: 30px;
+        }
+    }
 }
-.card img
+.text--menu /*text du menu, pour le ranger */
+{
+    display: inline-flex;
+    width:100%;
+    justify-content: space-between;
+}
+.photo_restaurant
 {
     height: 70%;
     width: 100%;
     object-fit: cover;
     border-radius: 40px 40px 0px 0px;
+    &--header /*modifier pour l'image header menu */
+    {
+    border-radius: 0%;
+    }
 }
 .card_text
 { 
@@ -48,19 +91,70 @@
         top:178%;
     }
 }
-section /*conteneur des bloc card */
+.cards /*conteneur des bloc card */
 {
     @include text--center;
     background-color: $color_background;
     margin-top: 130px;
     padding-bottom: 170px;
     padding-top:50px;
+    &--menu  /*sur page menu*/
+    {
+        margin-top: -100px;
+        position: relative; 
+        border-radius: 100px 100px 0 0;
+        padding-bottom: 150px;
+        justify-content: flex-start;
+        display: block;     
+    }
+    & h2 
+    {
+        padding:0%;
+        font-size: 48px;
+        font-weight: lighter;
+        color:darken($color: $color_background,$amount: 60%);
+    }
+    & h1 
+    {
+        margin-bottom: 0%;
+    }
 }
-
 .link_new::before /* tag "nouveau"*/
 {   
     content:'Nouveau'; /* écrit le texte dans le css directement"*/
     @include new;
     transform: translate(285%,50%); /* déplace le texte par rapport à son élément parent */
     position: absolute;
+}
+i[class="fa-solid fa-heart"] /*coeur "solid"*/
+{
+    opacity: 0;
+    color:transparent; /* vu que l'icone est considéré comme un texte, le rend transparent */
+    background:linear-gradient(to bottom left,$color_primary,$color_secondary);
+    background-clip: text; /*s'étend jusqu'à la limite de la boite de remplissage ici considéré comme un texte (heart est dans une balise <i>) */
+
+}
+i[class="fa-solid fa-heart"]:active /*animation coeur*/
+{   
+    
+    opacity: 1;
+    animation: heart ease-out 150ms;
+}
+nav li:hover /* liste navigation "fonctionnement" */
+{
+    background: rgba($color: $color_primary, $alpha: 0.1); 
+    animation: btn_hover 400ms ease forwards;
+        & i                          /* selectionne les icones pour les changer aussi de couleur */
+        {
+            color: $color_primary;
+        }
+}
+.box__border /*boite pour bordure des h2 dans menu */
+{
+    width:10%;
+    border-bottom:8px solid $color_tertiary;
+    margin-left:6%;
+    margin-top: 100px;
+    margin-bottom: 0%;
+    height:70px;
 }
