@@ -33,6 +33,27 @@
         height:175px;
         text-overflow: ellipsis;
         white-space: nowrap;
+        box-sizing: border-box;
+        
+         &:active .check
+         {
+            display: block;
+            background-color: $color_tertiary;
+            width:17%;
+            height:179px;
+            font-size: 50px;
+            color:invert($color: #000000);
+            border:none;
+            position: relative;
+            bottom: 81px;
+            padding-left: 0%;
+            border-radius: 0 40px 40px 0;
+            transform-origin: right;
+            animation: check 300ms alternate both;
+            
+         }
+
+
         
         & h3 
         {
@@ -47,8 +68,12 @@
             margin:0%;
             padding-bottom:30px;
             padding-top:15px;
-            padding-right: 50px;
+           
             color:darken($color: $color-background, $amount: 65%)
+        }
+        & p strong
+        {
+            padding-right:50px;
         }
         & p,& h3 
         {
@@ -157,4 +182,10 @@ nav li:hover /* liste navigation "fonctionnement" */
     margin-top: 100px;
     margin-bottom: 0%;
     height:70px;
+}
+.check /* bouton "valider" pour les commandes de menu*/
+{
+   
+ display:none;
+    
 }

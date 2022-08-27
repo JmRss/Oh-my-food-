@@ -64,3 +64,13 @@ $color_background:#f6f6f6;
         transform: scale(1);
     }
 }
+@keyframes check
+{
+        0% {
+            transform: scaleX(0);
+        }
+        100% {
+            transform: scaleX(1);
+        }
+    
+}

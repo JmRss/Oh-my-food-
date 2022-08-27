@@ -43,6 +43,22 @@
     transform: scale(1);
   }
 }
+@-webkit-keyframes check {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes check {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
 header {
   height: 150px;
   display: flex;
@@ -59,17 +75,27 @@ header, .reserve, nav, ul {
 
 footer {
   background-color: #373737;
-  color: white;
-  height: 510px;
+  color: #f6f6f6;
+  height: 540px;
   padding-left: 7%;
   line-height: 70px;
+}
+
+footer h4 {
+  font-weight: lighter;
+}
+
+footer i {
+  font-size: 40px;
+  margin-right: 20px;
 }
 
 .logo_footer {
   height: 50px;
   filter: invert(100%); /*inverse la couleur de l'image*/
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   margin-top: 50px;
+  padding-top: 20px;
 }
 
 .btn {
@@ -110,6 +136,23 @@ footer {
   height: 175px;
   text-overflow: ellipsis;
   white-space: nowrap;
+  box-sizing: border-box;
+}
+.card--menu:active .check {
+  display: block;
+  background-color: #99E2D0;
+  width: 17%;
+  height: 179px;
+  font-size: 50px;
+  color: white;
+  border: none;
+  position: relative;
+  bottom: 81px;
+  padding-left: 0%;
+  border-radius: 0 40px 40px 0;
+  transform-origin: right;
+  -webkit-animation: check 300ms alternate both;
+          animation: check 300ms alternate both;
 }
 .card--menu h3 {
   font-size: 48px;
@@ -122,8 +165,10 @@ footer {
   margin: 0%;
   padding-bottom: 30px;
   padding-top: 15px;
-  padding-right: 50px;
   color: #505050;
+}
+.card--menu p strong {
+  padding-right: 50px;
 }
 .card--menu p, .card--menu h3 {
   padding-left: 30px;
@@ -244,6 +289,10 @@ nav li:hover i {
   margin-top: 100px;
   margin-bottom: 0%;
   height: 70px;
+}
+
+.check {
+  display: none;
 }
 
 body {

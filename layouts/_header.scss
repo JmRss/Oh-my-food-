@@ -11,15 +11,26 @@ header,.reserve,nav,ul
 footer
 {
     background-color: darken($color: $color_background, $amount: 75%);
-    color: white;
-    height: 510px;
+    color: $color_background;
+    height: 540px;
     padding-left: 7%;
-    line-height: 70px;  
+    line-height: 70px; 
+
+}
+footer h4
+{
+    font-weight: lighter;
+}
+footer i
+{
+    font-size: 40px;
+    margin-right:20px;
 }
 .logo_footer
 {
     height:50px;
     filter: invert(100%); /*inverse la couleur de l'image*/
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     margin-top: 50px;
+    padding-top: 20px;
 }
