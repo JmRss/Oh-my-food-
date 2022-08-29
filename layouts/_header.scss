@@ -3,10 +3,18 @@ header
     height:150px;
     @include text--center();
     justify-content: center;
+    position: relative;
 }
 header,.reserve,nav,ul
 {
     @include text--center(); 
+}
+header a /*fleche retour accueil */
+{
+    position:absolute;
+    left:6%;
+    font-size: 60px;
+    color:darken($color: $color_background, $amount: 75%)
 }
 footer
 {
@@ -14,8 +22,7 @@ footer
     color: $color_background;
     height: 540px;
     padding-left: 7%;
-    line-height: 70px; 
-
+    line-height: 70px;
 }
 footer h4
 {
@@ -33,4 +40,16 @@ footer i
     margin-bottom: 30px;
     margin-top: 50px;
     padding-top: 20px;
+}
+.photo_restaurant
+{
+    height: 70%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 40px 40px 0px 0px;
+    &--header /*modifier pour l'image header menu */
+    {
+    border-radius: 0%;
+    height:680px;
+    }
 }

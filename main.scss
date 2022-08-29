@@ -16,18 +16,22 @@ body
     & h1
     {   
         font-family: "shrikhand";
-        font-size: 75px;
+        font-size: 72px;
         font-weight: lighter;
         justify-content: space-around;
-        display: inline-flex;
-        width:100%;
-    }
-    & i[class="fa-regular fa-heart"]  /*icone coeur */
-    {
-        font-size:70px;
-        align-items: center;
-        display:flex;
-        padding-right: 50px;
+        padding-left: 6%;
+        width:94%;
+        position: relative;
+        & i  /*icone coeur */
+        {
+            font-size:70px;
+            align-items: center;
+            display:flex;
+            padding-right: 50px;
+            position:absolute;
+            top:11%;
+            right:5%;
+        }
     }
 }
 h3 /* titre "Fonctionnement" */
@@ -100,7 +104,6 @@ ul li /* conteneur de chaque case "Fonctionnement" */
     @include shadow;
     font-size: 45px;
     font-weight: bold; 
-    overflow: inherit;
 
 }
 ul
@@ -109,7 +112,7 @@ ul
     justify-content: space-between;
     
 }
-.puce
+.puce /* pastille 1, 2 ,3 de li "Fonctionnement"*/
 {
     font-size: 40px;
     height:65px;

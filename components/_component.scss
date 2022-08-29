@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
     @include shadow;
-        &:hover
+        &:active
         {
             filter:brightness(1.20);
             box-shadow:darken($color: $color_background, $amount: 50%) 0px 15px 20px;
@@ -34,31 +34,45 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         box-sizing: border-box;
-        
+        overflow: hidden;
+        animation:slide_menu 600ms  ease both; /*apparition des menus */
+        &--one
+        {
+            animation-delay: 300ms;
+        }
+        &--two
+        {
+            animation-delay: 450ms;
+        }
+        &--three
+        {
+            animation-delay: 600ms;
+        }
          &:active .check
          {
             display: block;
             background-color: $color_tertiary;
-            width:17%;
+            width:150px;
+            font-size: 60px;
             height:179px;
-            font-size: 50px;
             color:invert($color: #000000);
             border:none;
-            position: relative;
-            bottom: 81px;
+            bottom:81px;
             padding-left: 0%;
             border-radius: 0 40px 40px 0;
             transform-origin: right;
-            animation: check 300ms alternate both;
-            
+            animation: slide_check 600ms 150ms ease-in-out both alternate;
+            animation-iteration-count: 2;
+            position: relative;  /*permet de le placer correctement */
+                & i 
+                {
+                    animation: check 600ms 150ms ease-in-out both alternate;
+                    animation-iteration-count: 2;
+                }
          }
-
-
-        
         & h3 
         {
             font-size: 48px;
-            width:100%;
             height:50px;
             margin:0%;
             padding-top: 30px;
@@ -68,8 +82,9 @@
             margin:0%;
             padding-bottom:30px;
             padding-top:15px;
-           
-            color:darken($color: $color-background, $amount: 65%)
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color:darken($color: $color-background, $amount: 65%);
         }
         & p strong
         {
@@ -87,17 +102,7 @@
     width:100%;
     justify-content: space-between;
 }
-.photo_restaurant
-{
-    height: 70%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 40px 40px 0px 0px;
-    &--header /*modifier pour l'image header menu */
-    {
-    border-radius: 0%;
-    }
-}
+
 .card_text
 { 
     padding-left: 40px;
@@ -130,7 +135,7 @@
         border-radius: 100px 100px 0 0;
         padding-bottom: 150px;
         justify-content: flex-start;
-        display: block;     
+        display: block; 
     }
     & h2 
     {
@@ -165,14 +170,14 @@ i[class="fa-solid fa-heart"]:active /*animation coeur*/
     opacity: 1;
     animation: heart ease-out 150ms;
 }
-nav li:hover /* liste navigation "fonctionnement" */
+nav li:active /* liste navigation "fonctionnement" */
 {
     background: rgba($color: $color_primary, $alpha: 0.1); 
-    animation: btn_hover 400ms ease forwards;
-        & i                          /* selectionne les icones pour les changer aussi de couleur */
-        {
-            color: $color_primary;
-        }
+    animation: filter 300ms ease-out both;
+    & i 
+    {
+        color: $color_primary;
+    }
 }
 .box__border /*boite pour bordure des h2 dans menu */
 {
@@ -185,7 +190,37 @@ nav li:hover /* liste navigation "fonctionnement" */
 }
 .check /* bouton "valider" pour les commandes de menu*/
 {
-   
- display:none;
-    
+  display:none;
+}
+header a:active
+{
+    width:120px;
+    height:80px;
+    color:$color_tertiary;
+    transform: translateX(-50px);
+    transition: all 300ms;
+}
+.loader /* pour le loader */
+{
+    transform: translate(-200px,-200px);
+    font-size: 130px;
+    position: absolute;
+    animation: loading_spinner 1500ms 150ms ease-in;
+    display: block;
+}
+.oh
+{
+    color:white;
+}
+.my
+{
+    color:$color_tertiary;
+}
+.food
+{
+    color:$color_secondary;
+}
+.oh,.my,.food
+{
+    text-shadow: darken($color: $color_background, $amount: 30%) 0px 10px 10px;
 }

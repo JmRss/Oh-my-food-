@@ -41,36 +41,61 @@ $color_background:#f6f6f6;
 @keyframes heart
 {
     0%{
-        transform: scaleX(.1);
-        filter: brightness(1.75);
+        transform: scaleY(.1);
+        transform-origin: bottom;
     }
     100%
     {
-        transform: scaleX(1);
+        transform: scaleY(1);
     } 
 }
-@keyframes btn_hover
+@keyframes check /*icone valider*/
 {
-    0%
-    {
-        transform: scale(1.1);
+    from {
+        transform:translateX(60px) rotate(-2turn);
+        z-index: -1;
     }
-    33% 
+    to {
+      transform: translateX(0px);
+      
+    }
+  }
+  @keyframes slide_check /*background icone valider*/
+  {
+    from{
+        transform:scaleX(0);
+    }
+    to{
+        transform: scaleX(1);
+    }
+  }
+  @keyframes filter /*Filtre "Fonctionnement"*/
+  {
+    0% {
+        transform:scale(1);
+    }
+    100%
     {
         transform: scale(1.2);
     }
-    100%
-    {
-        transform: scale(1);
+}
+  @keyframes slide_menu
+   {
+    0%{
+        transform:translateY(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform:translateY(0px);
+        opacity:1;
     }
 }
-@keyframes check
-{
-        0% {
-            transform: scaleX(0);
+@keyframes loading_spinner
+    {
+        0%{
+            transform:scale(.1); 
         }
-        100% {
-            transform: scaleX(1);
+        100%{
+            transform:translate(0%,200%) scale(1.6);
         }
-    
-}
+    }
