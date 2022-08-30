@@ -222,9 +222,7 @@ header a:active
     border: 20px solid $color_background;
     border-top-color:$color_secondary;
     border-radius: 50%;
-    transform: rotate(0.16turn);
-    animation: loading 700ms ease infinite both;
-    animation-iteration-count: 3;
+    animation: loading 2150ms linear both;
 }
 .loading::before
 {
@@ -234,17 +232,17 @@ header a:active
     content:"Ohmyfood";
     font-family: "Shrikhand";
     font-size: 90px;
-    animation: loading--text 1500ms 150ms ease;
+    animation: loading--text 2000ms 150ms ease-out;
     animation-iteration-count: 1;
 }
 .loading__back
 {
     position:absolute;
     z-index: -5;
-    height:9000%;
+    height:5000%;
     width:100%;
     background-color: rgba(255,255,255,0.6);
     backdrop-filter:invert(80%);
     opacity: 0;
-    animation:scale--none 2500ms ease-in-out;
+    animation:scale--none 2150ms ease-in-out;
 }

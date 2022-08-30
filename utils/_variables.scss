@@ -92,15 +92,18 @@ $color_background:#f6f6f6;
 }
 @keyframes loading {
 
-    from {
-      transform: rotate(0turn);
-      opacity: 1;
+    90%{
+        transform: rotate(5turn);
     }
-    
-    to {
-      transform: rotate(1turn);
+
+    99%{
+        transform:translateY(-99999px);
+        opacity: 1;
     }
-  }
+    100%{
+        opacity: 0;
+    }
+}
 @keyframes loading--text
 {
     from {
