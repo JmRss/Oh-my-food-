@@ -14,8 +14,8 @@
     </head>
     <body>
         <header>  
-            <div class="loading__back"></div>
-            <div class="loading loading--spinner">  <!-- Loading spinner-->
+            <div class="loading__back"></div><!-- background du loader-->
+            <div class="loading loading--spinner loading--spinner--out">  <!-- Loading spinner-->
             </div> 
             <img src="images/ohmyfood.png" alt="logo"/>
         </header>
@@ -24,7 +24,7 @@
             <form id="form" method="post" action="#">
                 <label for="local">
                     <i class="fa-solid fa-location-dot fa-sm"></i> <!--Icone localisation-->
-                    <input type="text" id="local" name="local" size="50" placeholder="Paris, Belleville">
+                    <input type="text" id="local" name="local" maxlength="25" placeholder="Paris, Belleville">
                 </label>
             </form>
         
@@ -86,7 +86,7 @@
                 <h4><i class="fa-solid fa-utensils"></i> Proposer un restaurant</h4>
                 <h4><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</h4>
                 <h4>Mentions légales</h4>
-                <h4>Contact</h4>
+                <h4><a href="mailto:@email.com">Contact</a></h4>
         </footer>
     </body>
 </html>

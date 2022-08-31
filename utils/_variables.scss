@@ -41,45 +41,27 @@ $color_background:#f6f6f6;
 @keyframes heart
 {
     0%{
-        transform: scaleY(.1);
+        transform: scale(.1);
         transform-origin: bottom;
+        
     }
     100%
     {
-        transform: scaleY(1);
+       transform: scale(1);
+       opacity: 1;
     } 
 }
-@keyframes check /*icone valider*/
-{
-    from {
-        transform:translateX(60px) rotate(-2turn);
-        z-index: -1;
-    }
-    to {
-      transform: translateX(0px);
-      
-    }
-  }
-  @keyframes slide_check /*background icone valider*/
-  {
-    from{
-        transform:scaleX(0);
-    }
-    to{
-        transform: scaleX(1);
-    }
-  }
-  @keyframes filter /*Filtre "Fonctionnement"*/
+@keyframes filter /*Filtre "Fonctionnement"*/
   {
     0% {
         transform:scale(1);
     }
     100%
     {
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
 }
-  @keyframes slide_menu
+@keyframes slide_menu
    {
     0%{
         transform:translateY(-100px);
@@ -90,7 +72,28 @@ $color_background:#f6f6f6;
         opacity:1;
     }
 }
-@keyframes loading {
+@keyframes slide__check /*animation bouton check menu*/
+{
+    from{}
+    to {right:0%}
+}
+@keyframes slide--width
+{
+    from{}
+    to{width:80%}
+}
+
+@keyframes roll /*icone "valider menu"*/
+{
+    from{
+        transform:rotate(0turn)
+    }
+    to{
+        transform: rotate(1turn);
+    }
+}
+@keyframes loading /* loading spinner*/
+{
 
     90%{
         transform: rotate(5turn);
@@ -102,9 +105,10 @@ $color_background:#f6f6f6;
     }
     100%{
         opacity: 0;
+        transform:scale(0);
     }
 }
-@keyframes loading--text
+@keyframes loading--text /* loading spinner*/
 {
     from {
         transform-origin: left;
@@ -117,15 +121,26 @@ $color_background:#f6f6f6;
 
     }
 }
-@keyframes scale--none
+@keyframes scale--none /* loading spinner*/
 {
-    from{
-        transform: scaleX(1);
+    0%{
+        transform-origin: top;
         z-index:2;
         opacity: 1;
     }
+       
+    
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes slide__text
+{
+    from{
+        transform-origin: left;
+        width: 100%;
+    }
     to{
-        transform:scaleX(0);
-        opacity: 1;
+        width:75%;
     }
 }

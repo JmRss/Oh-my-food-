@@ -22,6 +22,17 @@
         margin-top: 120px;
     }
 } 
+.check /* background bouton check menu*/
+{
+    height:100%;
+    width:20%;
+    font-size: 60px;
+    color:invert($color: #000000);
+    background-color: $color_tertiary;
+    border:none;
+    position: absolute;
+    right:-20%;
+}
 .card /* bloc avec photo restaurant et texte, dans "Restaurant" */
 {
     @include card;
@@ -30,12 +41,13 @@
     
     &--menu /*modifier de card pour les pages "menu"*/
     {
+        position: relative;
         height:175px;
         text-overflow: ellipsis;
         white-space: nowrap;
         box-sizing: border-box;
         overflow: hidden;
-        animation:slide_menu 600ms  ease both; /*apparition des menus */
+        animation:slide_menu 750ms ease both;/*apparition des menus */
         &--one
         {
             animation-delay: 300ms;
@@ -48,29 +60,27 @@
         {
             animation-delay: 600ms;
         }
-         &:active .check
-         {
-            display: block;
-            background-color: $color_tertiary;
-            width:150px;
-            font-size: 60px;
-            height:179px;
-            color:invert($color: #000000);
-            border:none;
-            bottom:81px;
-            padding-left: 0%;
-            border-radius: 0 40px 40px 0;
-            transform-origin: right;
-            animation: slide_check 600ms 150ms ease-in-out both alternate;
-            animation-iteration-count: 2;
-            position: relative;  /*permet de le placer correctement */
-                & i 
+        &--four
+        {
+            animation-delay: 750ms;
+        }
+        &:hover
+        {
+            .check{
+                animation:slide__check 600ms ease alternate;
+                animation-iteration-count: 2;
+            }
+            & i /*icone de l'animation "valider menu"*/
                 {
-                    animation: check 600ms 150ms ease-in-out both alternate;
-                    animation-iteration-count: 2;
+                animation: roll 600ms ease-out;
                 }
-         }
-        & h3 
+            .text--menu
+            {
+                animation:slide--width 600ms ease alternate;
+                animation-iteration-count: 2;
+            }   
+        }
+        & h3
         {
             font-size: 48px;
             height:50px;
@@ -86,10 +96,6 @@
             text-overflow: ellipsis;
             color:darken($color: $color-background, $amount: 65%);
         }
-        & p strong
-        {
-            padding-right:50px;
-        }
         & p,& h3 
         {
             padding-left: 30px;
@@ -101,6 +107,12 @@
     display: inline-flex;
     width:100%;
     justify-content: space-between;
+
+    & span {
+        height:100%;
+        padding-top: 16px;
+        padding-right: 50px;
+    }
 }
 
 .card_text
@@ -135,7 +147,7 @@
         border-radius: 100px 100px 0 0;
         padding-bottom: 150px;
         justify-content: flex-start;
-        display: block; 
+        display: block;
     }
     & h2 
     {
@@ -162,15 +174,17 @@ i[class="fa-solid fa-heart"] /*coeur "solid"*/
     color:transparent; /* vu que l'icone est considéré comme un texte, le rend transparent */
     background:linear-gradient(to bottom left,$color_primary,$color_secondary);
     background-clip: text; /*s'étend jusqu'à la limite de la boite de remplissage ici considéré comme un texte (heart est dans une balise <i>) */
-
-}
-i[class="fa-solid fa-heart"]:active /*animation coeur*/
-{   
     
-    opacity: 1;
-    animation: heart ease-out 150ms;
+    &:hover
+    { 
+    animation: heart ease-in 300ms forwards;
+    }
 }
-nav li:active /* liste navigation "fonctionnement" */
+.cards--menu h1 i[class="fa-solid fa-heart"] /*coeur "solid" dans les menu*/
+{
+    padding-left:50px;
+}
+nav li:hover /* liste navigation "fonctionnement" */
 {
     background: rgba($color: $color_primary, $alpha: 0.1); 
     animation: filter 300ms ease-out both;
@@ -188,10 +202,6 @@ nav li:active /* liste navigation "fonctionnement" */
     margin-bottom: 0%;
     height:70px;
 }
-.check /* bouton "valider" pour les commandes de menu*/
-{
-  display:none;
-}
 header a:active
 {
     width:120px;
@@ -201,7 +211,7 @@ header a:active
     transition: all 300ms;
 }
 
-.loading 
+.loading /*animation loader spinner */
 {
     z-index: 3;
     display: flex;
@@ -209,12 +219,12 @@ header a:active
     position: absolute;
     top:600%;
 }
-.loading--spinner 
+.loading--spinner /*animation loader spinner */
 {
     align-items: center;
     height: 100%;
 }
-.loading::after 
+.loading::after /*animation loader spinner */
 {
     content: "";
     width: 550px;
@@ -224,7 +234,7 @@ header a:active
     border-radius: 50%;
     animation: loading 2150ms linear both;
 }
-.loading::before
+.loading::before /*animation loader spinner */
 {
     position: absolute;
     z-index: -5;
@@ -235,14 +245,14 @@ header a:active
     animation: loading--text 2000ms 150ms ease-out;
     animation-iteration-count: 1;
 }
-.loading__back
+.loading__back /*animation loader spinner */
 {
     position:absolute;
     z-index: -5;
     height:5000%;
     width:100%;
     background-color: rgba(255,255,255,0.6);
-    backdrop-filter:invert(80%);
-    opacity: 0;
-    animation:scale--none 2150ms ease-in-out;
+    backdrop-filter:blur(20px);
+    opacity: 1;
+    animation:scale--none 2250ms 1500ms ease both;
 }
