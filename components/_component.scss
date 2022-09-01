@@ -3,10 +3,11 @@
     color: $color_background;
     background:linear-gradient(to bottom right,$color_secondary,$color_primary);
     border-radius: 100px;
-    height:130px;
-    margin-top:30px;
-    width:600px;
-    font-size: 44px;
+    height:47px;
+    margin-top:10px;
+    width:220px;
+    font-size: 16px;
+    font-weight: 500;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -18,15 +19,16 @@
         }
     &--menu
     {
-        width:480px;
-        margin-top: 120px;
+        width:180px;
+        height:52px;
+        margin-top: 48px;
     }
 } 
 .check /* background bouton check menu*/
 {
     height:100%;
-    width:20%;
-    font-size: 60px;
+    width:18%;
+    font-size: $font-size__titre;
     color:invert($color: #000000);
     background-color: $color_tertiary;
     border:none;
@@ -37,12 +39,13 @@
 {
     @include card;
     @include shadow;
-    margin-top: 50px;
+    margin-top: 17px;
+    position: relative;
     
     &--menu /*modifier de card pour les pages "menu"*/
     {
         position: relative;
-        height:175px;
+        height:68px;
         text-overflow: ellipsis;
         white-space: nowrap;
         box-sizing: border-box;
@@ -69,6 +72,7 @@
             .check{
                 animation:slide__check 600ms ease alternate;
                 animation-iteration-count: 2;
+    
             }
             & i /*icone de l'animation "valider menu"*/
                 {
@@ -82,25 +86,37 @@
         }
         & h3
         {
-            font-size: 48px;
-            height:50px;
+            font-size: 18px;
+            height:20px;
             margin:0%;
-            padding-top: 30px;
+            margin-top: 15px;
         }
         & p
         {
             margin:0%;
+            font-size: 15px;
             padding-bottom:30px;
-            padding-top:15px;
             overflow: hidden;
             text-overflow: ellipsis;
             color:darken($color: $color-background, $amount: 65%);
         }
         & p,& h3 
         {
-            padding-left: 30px;
+            padding-left: 13px;
         }
     }
+}
+.photo_restaurant
+{
+    height: 69%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px 15px 0px 0px;
+        &--header /*modifier pour l'image header menu */
+            {
+            border-radius: 0%;
+            height:300px;
+            }
 }
 .text--menu /*text du menu, pour le ranger */
 {
@@ -110,49 +126,36 @@
 
     & span {
         height:100%;
-        padding-top: 16px;
-        padding-right: 50px;
+        font-size: 15px;
+        padding-right: 20px;
     }
 }
-
 .card_text
 { 
-    padding-left: 40px;
-    padding-top: 25px;
+    padding-left: 15px;
+    padding-top: 12px;
     position: relative;
-}
-
-.new /* icone "nouveau" */ 
-{
-    @include new;
-    position: absolute;
-    left:69%;
-    top:137.5%;
-    &--card-two
-    {
-        top:178%;
-    }
 }
 .cards /*conteneur des bloc card */
 {
     @include text--center;
     background-color: $color_background;
-    margin-top: 130px;
-    padding-bottom: 170px;
-    padding-top:50px;
+    margin-top: 52px;
+    padding-bottom: 70px;
+    padding-top:10px;
     &--menu  /*sur page menu*/
     {
-        margin-top: -100px;
+        margin-top: -80px;
         position: relative; 
-        border-radius: 100px 100px 0 0;
-        padding-bottom: 150px;
+        border-radius: 40px 40px 0 0;
+        padding-bottom: 55px;
         justify-content: flex-start;
         display: block;
     }
     & h2 
     {
         padding:0%;
-        font-size: 48px;
+        font-size: 17px;
         font-weight: lighter;
         color:darken($color: $color_background,$amount: 60%);
     }
@@ -161,12 +164,14 @@
         margin-bottom: 0%;
     }
 }
-.link_new::before /* tag "nouveau"*/
+.link_new::before /* carte "nouveau"*/
 {   
     content:'Nouveau'; /* écrit le texte dans le css directement"*/
     @include new;
-    transform: translate(285%,50%); /* déplace le texte par rapport à son élément parent */
     position: absolute;
+    font-size: 15px;
+    right: 3%;
+    top: 5%;
 }
 i[class="fa-solid fa-heart"] /*coeur "solid"*/
 {
@@ -182,7 +187,7 @@ i[class="fa-solid fa-heart"] /*coeur "solid"*/
 }
 .cards--menu h1 i[class="fa-solid fa-heart"] /*coeur "solid" dans les menu*/
 {
-    padding-left:50px;
+    padding-left:18px;
 }
 nav li:hover /* liste navigation "fonctionnement" */
 {
@@ -196,35 +201,36 @@ nav li:hover /* liste navigation "fonctionnement" */
 .box__border /*boite pour bordure des h2 dans menu */
 {
     width:10%;
-    border-bottom:8px solid $color_tertiary;
+    border-bottom:3px solid $color_tertiary;
     margin-left:6%;
-    margin-top: 100px;
+    margin-top: 40px;
     margin-bottom: 0%;
-    height:70px;
+    height:25px;
 }
 header a:active
 {
-    width:120px;
-    height:80px;
+   
     color:$color_tertiary;
-    transform: translateX(-50px);
-    transition: all 300ms;
+    font-size: larger;
+    box-shadow: $color_background 0px 5px 5px;
+    transform: translateX(-40px);
+    transition: all 400ms ease-out;
 }
-
-.loading /*animation loader spinner */
+/*
+.loading /*animation loader spinner 
 {
-    z-index: 3;
+   
     display: flex;
     justify-content: center;
     position: absolute;
     top:600%;
 }
-.loading--spinner /*animation loader spinner */
+.loading--spinner /*animation loader spinner 
 {
     align-items: center;
-    height: 100%;
+    height: 1%; 
 }
-.loading::after /*animation loader spinner */
+.loading::after /*animation loader spinner 
 {
     content: "";
     width: 550px;
@@ -234,25 +240,25 @@ header a:active
     border-radius: 50%;
     animation: loading 2150ms linear both;
 }
-.loading::before /*animation loader spinner */
+.loading::before /*animation loader spinner 
 {
     position: absolute;
-    z-index: -5;
     opacity: 0;
+    transform:scaleX(0);
+    transition: transform;
     content:"Ohmyfood";
     font-family: "Shrikhand";
     font-size: 90px;
     animation: loading--text 2000ms 150ms ease-out;
     animation-iteration-count: 1;
 }
-.loading__back /*animation loader spinner */
+.loading__back /*animation loader spinner 
 {
     position:absolute;
-    z-index: -5;
     height:5000%;
     width:100%;
     background-color: rgba(255,255,255,0.6);
     backdrop-filter:blur(20px);
     opacity: 1;
-    animation:scale--none 2250ms 1500ms ease both;
-}
+    animation:scale--none 2150ms 1500ms ease both;
+}*/

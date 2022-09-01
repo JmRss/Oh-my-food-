@@ -1,6 +1,6 @@
 header
 {
-    height:150px;
+    height:50px;
     @include text--center();
     justify-content: center;
     position: relative;
@@ -13,24 +13,25 @@ header a /*fleche retour accueil */
 {
     position:absolute;
     left:6%;
-    font-size: 60px;
+    font-size: $font-size__titre;
     color:darken($color: $color_background, $amount: 75%)
 }
 footer
 {
     background-color: darken($color: $color_background, $amount: 75%);
     color: $color_background;
-    height: 540px;
+    height: 200px;
     padding-left: 7%;
-    line-height: 70px;
+    line-height: 25px;
 }
 footer h4
 {
     font-weight: lighter;
+    font-size: 16px;
 }
 footer i
 {
-    font-size: 40px;
+    font-size: 15px;
     margin-right:20px;
 }
 footer a
@@ -40,21 +41,9 @@ footer a
 }
 .logo_footer
 {
-    height:50px;
+    height:18px;
     filter: invert(100%); /*inverse la couleur de l'image*/
-    margin-bottom: 30px;
-    margin-top: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     padding-top: 20px;
-}
-.photo_restaurant
-{
-    height: 70%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 40px 40px 0px 0px;
-    &--header /*modifier pour l'image header menu */
-    {
-    border-radius: 0%;
-    height:680px;
-    }
 }

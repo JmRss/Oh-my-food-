@@ -1,22 +1,26 @@
-@import "./Base/fonts";
 @import "./utils/variables";
 @import "./layouts/header";
 @import "./components/component";
+header img
+{
+    height:28px;
+}
 body
 {
     font-family:"roboto";
-    font-size:50px;
+    font-size:18px;
     width:100%;
     height:auto;
     margin:0%;
 }
 .body--menu
 {
-    font-size: 42px;
+    font-size: $font-size__body;
     & h1
     {   
         font-family: "shrikhand";
-        font-size: 72px;
+        font-size: 28px;
+        color:darken($color: $color_background, $amount:90%);
         font-weight: lighter;
         justify-content: space-around;
         padding-left: 6%;
@@ -24,12 +28,12 @@ body
         position: relative;
         & i  /*icone coeur */
         {
-            font-size:70px;
+            font-size:28px;
             align-items: center;
             display:flex;
-            padding-right: 50px;
+            padding-right: 15px;
             position:absolute;
-            top:11%;
+            top:3%;
             right:5%;
         }
     }
@@ -37,8 +41,10 @@ body
 h3 /* titre "Fonctionnement" */
 {
     width:90%;
-    margin-top: 100px;
-    margin-bottom: 0%;
+    margin-top: 45px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: $font-size__titre;
 }
 h4
 {
@@ -46,26 +52,27 @@ h4
 }
 form,input[type="text"] 
 {
+    position: relative;
     background-color: darken($color: $color_background, $amount: 5%);
     border:none;
     outline: none;
-    font-size: 44px;   
+    font-size: $font-size__body;   
 }
 input[type="text"]/*zone de recherche restaurant*/
 {
     width:40%;
-    height:100px;
+    height:30px;
     margin:10px;
 }
 form /*formulaire recherche restaurant*/
 {
-    box-shadow: inset darken($color: $color_background, $amount: 20%) 0px 5px 10px;
+    box-shadow: inset darken($color: $color_background, $amount: 20%) 0px 3px 5px;
     width:100%;
-    height:120px;
+    height:50px;
 }
 input::placeholder 
 {
-    font-size:44px;
+    font-size:18px;
     color:darken($color: $color_background, $amount: 60%);
     text-align: center;
     font-weight: bold;
@@ -74,7 +81,7 @@ input::placeholder
 article /* bloc contentant: recherchez le menu qui vous convient */
 {
     background-color: $color_background;
-    height:870px;
+    height:340px;
     text-align: center;
 }
 article p
@@ -83,20 +90,15 @@ article p
 }
 h2 /* titre : "Réservez le menu[...]"*/
 {
-    padding-left:20%;
-    padding-right:20%;
-    padding-top: 50px;
+    padding-left:15%;
+    padding-right:15%;
+    padding-top: 20px;
     margin-bottom:0%;
 }
 h2, h3
 {
-    font-size: 65px;
+    font-size: $font-size__titre;
 }
-/*
-#local /*bordure interieur barre recherche 
-{
-    box-shadow: inset darken($color: $color_background, $amount: 20%) 0px 5px 10px;
-}*/
 nav,ul
 {
     width:100%;
@@ -107,52 +109,52 @@ ul li /* conteneur de chaque case "Fonctionnement" */
     list-style-type: none; 
     display: inline-flex;
     width:85%;
-    height:180px;
+    height:72px;
     background-color: $color_background ;
     align-items: center;
-    border-radius: 50px;
+    border-radius: 20px;
     @include shadow;
-    font-size: 45px;
+    font-size: 18px;
     font-weight: bold; 
-
 }
 ul
 {
-    height:650px;
-    justify-content: space-between;
-    
+    margin-top: 27px;
+    height:265px;
+    justify-content: space-between;    
 }
 .puce /* pastille 1, 2 ,3 de li "Fonctionnement"*/
 {
-    font-size: 40px;
-    height:65px;
-    width:65px;
+    font-size:14px;
+    font-weight: 400;
+    height:24px;
+    width:24px;
     border-radius: 100%;
     background-color: $color_primary;
     color:$color_background;
     @include text--center();
     justify-content: center; 
     position: relative;
-    left:-25px;
+    left:-10px;
 }
 nav i /*icones menu "fonctionnement"*/
 {
     color:darken($color: $color_background, $amount: 30%)
 }
-.puce,nav i
+.puce,nav i /*alignement texte/icone "fonctionnement"*/
 {
-    margin-right: 20px;
+    margin-right: 12px;
 }
-li h4  /* texte des titres dans "fonctionnement" */
+li h4
 {
-    
-    margin-left:40px;
+    margin-left: 12px;
+    font-size: 16px;
 }
 label i /*icone localisation */
 {
     position:absolute;
-    left:26%;
-    top:210px;
+    left:23%;
+    top:25px;
     color: darken($color: $color_background, $amount: 75%)
 }
 .card_text p
@@ -162,12 +164,14 @@ label i /*icone localisation */
 .card_text i /* icone coeur*/
 {
     position: absolute;
-    left:80%;
+    right:7%;
     bottom:25%;
-    font-size: 65px;
+    font-size: 25px;
 }
 .center_btn /*centre le bouton sur les pages menu */
 {
     display: flex;
     justify-content: center;
+    margin-top:0%;
 }
+@import "./layouts/responsive";
