@@ -207,17 +207,14 @@ nav li:hover /* liste navigation "fonctionnement" */
     margin-bottom: 0%;
     height:25px;
 }
-header a:active
-{
-   
+header a:active /* fleche retour index*/
+{ 
     color:$color_tertiary;
     font-size: larger;
     box-shadow: $color_background 0px 5px 5px;
-    transform: translateX(-40px);
-    transition: all 400ms ease-out;
 }
-/*
-.loading /*animation loader spinner 
+
+.loading /*animation loader spinner */
 {
    
     display: flex;
@@ -225,35 +222,38 @@ header a:active
     position: absolute;
     top:600%;
 }
-.loading--spinner /*animation loader spinner 
+.loading--spinner /*animation loader spinner */
 {
     align-items: center;
     height: 1%; 
 }
-.loading::after /*animation loader spinner 
+.loading::after /*animation loader spinner */
 {
+    z-index:2;
     content: "";
-    width: 550px;
-    height: 550px;
-    border: 20px solid $color_background;
+    width: 250px;
+    height: 250px;
+    border: 10px solid $color_background;
     border-top-color:$color_secondary;
     border-radius: 50%;
     animation: loading 2150ms linear both;
 }
-.loading::before /*animation loader spinner 
+.loading::before /*animation loader spinner */
 {
+    z-index:2;
     position: absolute;
     opacity: 0;
     transform:scaleX(0);
     transition: transform;
     content:"Ohmyfood";
     font-family: "Shrikhand";
-    font-size: 90px;
+    font-size: 40px;
     animation: loading--text 2000ms 150ms ease-out;
     animation-iteration-count: 1;
 }
-.loading__back /*animation loader spinner 
+.loading__back /*animation loader spinner */
 {
+    z-index:1;
     position:absolute;
     height:5000%;
     width:100%;
@@ -261,4 +261,4 @@ header a:active
     backdrop-filter:blur(20px);
     opacity: 1;
     animation:scale--none 2150ms 1500ms ease both;
-}*/
+}

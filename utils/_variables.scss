@@ -127,9 +127,12 @@ $font-size__titre:24px;
         transform-origin: top;
         opacity: 1;
     }
-    100%{
+    99%{
         opacity: 0;
-        transform: translateY(9999px);
+        transform: translateY(999px);
+    }
+    100%{
+        transform: scale(0);
     }
 }
 @keyframes slide__text
@@ -142,8 +145,9 @@ $font-size__titre:24px;
         width:75%;
     }
 }
-@keyframes btn__appear
+@keyframes appear
 {
-    from{opacity:0;}
-    to{opacity: 1;}
+    0%{}
+    90%{opacity: 0;}
+    100%{opacity: 1;}
 }
