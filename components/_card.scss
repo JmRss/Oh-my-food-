@@ -1,41 +1,4 @@
-.btn /* bouton avec dégradé couleur*/
-{
-    color: $color_background;
-    background:linear-gradient(to bottom right,$color_secondary,$color_primary);
-    border-radius: 100px;
-    height:47px;
-    margin-top:10px;
-    width:220px;
-    font-size: 16px;
-    font-weight: 500;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    @include shadow;
-        &:active
-        {
-            filter:brightness(1.20);
-            box-shadow:darken($color: $color_background, $amount: 50%) 0px 15px 20px;
-        }
-    &--menu
-    {
-        width:180px;
-        height:52px;
-        margin-top: 48px;
-    }
-} 
-.check /* background bouton check menu*/
-{
-    height:100%;
-    width:18%;
-    font-size: $font-size__titre;
-    color:invert($color: #000000);
-    background-color: $color_tertiary;
-    border:none;
-    position: absolute;
-    right:-20%;
-}
-.card /* bloc avec photo restaurant et texte, dans "Restaurant" */
+.card  /* bloc avec photo restaurant et texte, dans "Restaurant" */
 {
     @include card;
     @include shadow;
@@ -67,12 +30,11 @@
         {
             animation-delay: 750ms;
         }
-        &:hover
+        &:hover /*animation "valider menu" */
         {
             .check{
                 animation:slide__check 600ms ease alternate;
                 animation-iteration-count: 2;
-    
             }
             & i /*icone de l'animation "valider menu"*/
                 {
@@ -106,6 +68,31 @@
         }
     }
 }
+.body--menu
+{
+    font-size: $font-size__body;
+    & h1
+    {   
+        font-family: "shrikhand";
+        font-size: 28px;
+        color:darken($color: $color_background, $amount:90%);
+        font-weight: lighter;
+        justify-content: space-around;
+        padding-left: 6%;
+        width:94%;
+        position: relative;
+        & i  /*icone coeur */
+        {
+            font-size:28px;
+            align-items: center;
+            display:flex;
+            padding-right: 15px;
+            position:absolute;
+            top:3%;
+            right:5%;
+        }
+    }
+}
 .photo_restaurant
 {
     height: 69%;
@@ -135,6 +122,15 @@
     padding-left: 15px;
     padding-top: 12px;
     position: relative;
+        p{
+            margin-top:5px;
+        }
+        i{ /* icone coeur*/
+            position: absolute;
+            right:7%;
+            bottom:25%;
+            font-size: 25px;
+        }
 }
 .cards /*conteneur des bloc card */
 {
@@ -173,21 +169,28 @@
     right: 3%;
     top: 5%;
 }
-i[class="fa-solid fa-heart"] /*coeur "solid"*/
+
+.box__border /*boite pour bordure des h2 dans menu */
 {
-    opacity: 0;
-    color:transparent; /* vu que l'icone est considéré comme un texte, le rend transparent */
-    background:linear-gradient(to bottom left,$color_primary,$color_secondary);
-    background-clip: text; /*s'étend jusqu'à la limite de la boite de remplissage ici considéré comme un texte (heart est dans une balise <i>) */
-    
-    &:hover
-    { 
-    animation: heart ease-in 300ms forwards;
-    }
+    width:10%;
+    border-bottom:3px solid $color_tertiary;
+    margin-left:6%;
+    margin-top: 40px;
+    margin-bottom: 0%;
+    height:25px;
 }
-.cards--menu h1 i[class="fa-solid fa-heart"] /*coeur "solid" dans les menu*/
+ul li /* conteneur de chaque case "Fonctionnement" */
 {
-    padding-left:18px;
+    list-style-type: none; 
+    display: inline-flex;
+    width:85%;
+    height:72px;
+    background-color: $color_background ;
+    align-items: center;
+    border-radius: 20px;
+    @include shadow;
+    font-size: 18px;
+    font-weight: bold; 
 }
 nav li:hover /* liste navigation "fonctionnement" */
 {
@@ -198,67 +201,37 @@ nav li:hover /* liste navigation "fonctionnement" */
         color: $color_primary;
     }
 }
-.box__border /*boite pour bordure des h2 dans menu */
+ul
 {
-    width:10%;
-    border-bottom:3px solid $color_tertiary;
-    margin-left:6%;
-    margin-top: 40px;
-    margin-bottom: 0%;
-    height:25px;
+    margin-top: 27px;
+    height:265px;
+    justify-content: space-between;    
 }
-header a:active /* fleche retour index*/
-{ 
-    color:$color_tertiary;
-    font-size: larger;
-    box-shadow: $color_background 0px 5px 5px;
-}
-
-.loading /*animation loader spinner */
+.puce /* pastille 1, 2 ,3 de li "Fonctionnement"*/
 {
-   
+    font-size:14px;
+    font-weight: 400;
+    height:24px;
+    width:24px;
+    border-radius: 100%;
+    background-color: $color_primary;
+    color:$color_background;
+    @include text--center();
+    justify-content: center; 
+    position: relative;
+    left:-10px;
+}
+nav i /*icones menu "fonctionnement"*/
+{
+    color:darken($color: $color_background, $amount: 30%)
+}
+.puce,nav i /*alignement texte/icone "fonctionnement"*/
+{
+    margin-right: 12px;
+}
+.center_btn /*centre le bouton sur les pages menu */
+{
     display: flex;
     justify-content: center;
-    position: absolute;
-    top:600%;
-}
-.loading--spinner /*animation loader spinner */
-{
-    align-items: center;
-    height: 1%; 
-}
-.loading::after /*animation loader spinner */
-{
-    z-index:2;
-    content: "";
-    width: 250px;
-    height: 250px;
-    border: 10px solid $color_background;
-    border-top-color:$color_secondary;
-    border-radius: 50%;
-    animation: loading 2150ms linear both;
-}
-.loading::before /*animation loader spinner */
-{
-    z-index:2;
-    position: absolute;
-    opacity: 0;
-    transform:scaleX(0);
-    transition: transform;
-    content:"Ohmyfood";
-    font-family: "Shrikhand";
-    font-size: 40px;
-    animation: loading--text 2000ms 150ms ease-out;
-    animation-iteration-count: 1;
-}
-.loading__back /*animation loader spinner */
-{
-    z-index:1;
-    position:absolute;
-    height:5000%;
-    width:100%;
-    background-color: rgba(255,255,255,0.6);
-    backdrop-filter:blur(20px);
-    opacity: 1;
-    animation:scale--none 2150ms 1500ms ease both;
+    margin-top:0%;
 }

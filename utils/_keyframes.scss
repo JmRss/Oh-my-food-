@@ -1,0 +1,110 @@
+@keyframes heart
+{
+    0%{
+        transform: scale(.1);
+        transform-origin: bottom;      
+    }
+    100%
+    {
+       transform: scale(1);
+       opacity: 1;
+    } 
+}
+@keyframes filter /*Filtre "Fonctionnement"*/
+  {
+    0% {
+        transform:scale(1);
+    }
+    100%
+    {
+        transform: scale(1.1);
+    }
+}
+@keyframes slide_menu
+   {
+    0%{
+        transform:translateY(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform:translateY(0px);
+        opacity:1;
+    }
+}
+@keyframes slide__check /*animation bouton check menu*/
+{
+    from{}
+    to {right:0%}
+}
+@keyframes slide--width
+{
+    from{}
+    to{width:80%}
+}
+
+@keyframes roll /*icone "valider menu"*/
+{
+    from{
+        transform:rotate(0turn)
+    }
+    to{
+        transform: rotate(1turn);
+    }
+}
+@keyframes loading /* loading spinner*/
+{
+    90%{
+        transform: rotate(5turn);
+    }
+
+    99%{
+        transform:translateY(-99999px);
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform:scale(0);
+    }
+}
+@keyframes loading--text /* loading spinner*/
+{
+    from {
+        transform-origin: left;
+        transform:scaleX(.1);
+        z-index: 3;
+    }
+    to {
+        transform:scaleX(1);
+        opacity: 1;
+    }
+}
+@keyframes scale--none /* loading spinner*/
+{
+    0%{
+        transform-origin: top;
+        opacity: 1;
+    }
+    99%{
+        opacity: 0;
+        transform: translateY(999px);
+    }
+    100%{
+        transform: scale(0);
+    }
+}
+@keyframes slide__text
+{
+    from{
+        transform-origin: left;
+        width: 100%;
+    }
+    to{
+        width:75%;
+    }
+}
+@keyframes appear
+{
+    0%{}
+    90%{opacity: 0;}
+    100%{opacity: 1;}
+}

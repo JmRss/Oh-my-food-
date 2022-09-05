@@ -1,0 +1,52 @@
+body
+{
+    font-family:"roboto";
+    font-size:18px;
+    width:100%;
+    height:auto;
+    margin:0%;
+}
+h3 /* titre "Fonctionnement" */
+{
+    width:90%;
+    margin-top: 45px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: $font-size__titre;
+}
+h4
+{
+    margin:0%;
+}
+
+article /* bloc contentant: recherchez le menu qui vous convient */
+{
+    background-color: $color_background;
+    height:340px;
+    text-align: center;
+}
+article p
+{
+    color:darken($color: $color_background, $amount: 50%)
+}
+h2 /* titre : "Réservez le menu[...]"*/
+{
+    padding-left:15%;
+    padding-right:15%;
+    padding-top: 20px;
+    margin-bottom:0%;
+}
+h2, h3
+{
+    font-size: $font-size__titre;
+}
+nav,ul
+{
+    width:100%;
+    padding-left: 0%;
+}
+li h4
+{
+    margin-left: 12px;
+    font-size: 16px;
+}

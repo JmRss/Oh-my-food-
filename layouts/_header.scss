@@ -5,16 +5,13 @@ header
     justify-content: center;
     position: relative;
 }
+header img
+{
+    height:28px;
+}
 header,.reserve,nav,ul
 {
     @include text--center(); 
-}
-header a /*fleche retour accueil */
-{
-    position:absolute;
-    left:6%;
-    font-size: $font-size__titre;
-    color:darken($color: $color_background, $amount: 75%)
 }
 footer
 {

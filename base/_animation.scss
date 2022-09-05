@@ -1,0 +1,49 @@
+.loading /*animation loader spinner */
+{
+   
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top:600%;
+}
+.loading--spinner /*animation loader spinner */
+{
+    align-items: center;
+    height: 1%; 
+}
+.loading::after /*animation loader spinner */
+{
+    z-index:2;
+    content: "";
+    width: 250px;
+    height: 250px;
+    border: 10px solid $color_background;
+    border-top-color:$color_secondary;
+    border-radius: 50%;
+    animation: loading 2150ms linear both;
+}
+.loading::before /*animation loader spinner */
+{
+    z-index:2;
+    position: absolute;
+    opacity: 0;
+    transform:scaleX(0);
+    transition: transform;
+    content:"Ohmyfood";
+    font-family: "Shrikhand";
+    font-size: 40px;
+    animation: loading--text 2000ms 150ms ease-out;
+    animation-iteration-count: 1;
+}
+.loading__back /*animation loader spinner */
+{
+    z-index:1;
+    position:absolute;
+    height:5000%;
+    width:100%;
+    background-color: rgba(255,255,255,0.6);
+    backdrop-filter:blur(20px);
+    opacity: 1;
+    animation:scale--none 2150ms 1500ms ease both;
+}
+

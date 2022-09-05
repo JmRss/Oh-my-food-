@@ -1,0 +1,27 @@
+form,input[type="text"] 
+{
+    position: relative;
+    background-color: darken($color: $color_background, $amount: 5%);
+    border:none;
+    outline: none;
+    font-size: $font-size__body;   
+}
+input[type="text"]/*zone de recherche restaurant*/
+{
+    width:40%;
+    height:30px;
+    margin:10px;
+}
+form /*formulaire recherche restaurant*/
+{
+    box-shadow: inset darken($color: $color_background, $amount: 20%) 0px 3px 5px;
+    width:100%;
+    height:50px;
+}
+input::placeholder 
+{
+    font-size:18px;
+    color:darken($color: $color_background, $amount: 60%);
+    text-align: center;
+    font-weight: bold;  
+}
