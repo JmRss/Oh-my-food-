@@ -194,6 +194,7 @@ ul li /* conteneur de chaque case "Fonctionnement" */
 }
 nav li:hover /* liste navigation "fonctionnement" */
 {
+    cursor:pointer;
     background: rgba($color: $color_primary, $alpha: 0.1); 
     animation: filter 300ms ease-out both;
     & i 

@@ -452,6 +452,7 @@ ul li {
 }
 
 nav li:hover {
+  cursor: pointer;
   background: rgba(147, 86, 220, 0.1);
   -webkit-animation: filter 300ms ease-out both;
           animation: filter 300ms ease-out both;
@@ -509,6 +510,7 @@ nav i {
   justify-content: center;
   align-items: center;
   box-shadow: #d0d0d0 0px 5px 20px;
+  cursor: pointer;
 }
 .btn:active {
   filter: brightness(1.2);
@@ -565,6 +567,9 @@ label i {
   left: 23%;
   top: 25px;
   color: #373737;
+}
+label i:hover {
+  cursor: pointer;
 }
 
 form, input[type=text] {

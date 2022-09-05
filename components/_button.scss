@@ -67,9 +67,11 @@ header a:active /* fleche retour index*/
 }
 label i /*icone localisation */
 {
-    cursor: pointer;
     position:absolute;
     left:23%;
     top:25px;
-    color: darken($color: $color_background, $amount: 75%)
+    color: darken($color: $color_background, $amount: 75%);
+    &:hover{
+        cursor:pointer;
+    }
 }
