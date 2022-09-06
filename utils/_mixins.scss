@@ -9,7 +9,7 @@
     box-shadow: darken($color: $color_background, $amount: 15%) 0px 5px 20px;
 }
 @mixin card
-{
+{   
     display:block;
     width:90%;
     height:250px;

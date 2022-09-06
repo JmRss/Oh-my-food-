@@ -32,19 +32,18 @@
         }
         &:hover /*animation "valider menu" */
         {
+
             .check{
-                animation:slide__check 600ms ease alternate;
-                animation-iteration-count: 2;
+                animation:slide__check 600ms ease forwards;
+                animation-iteration-count: 1;
+            }
+            .text--menu{
+                animation: slide--width 600ms ease forwards;
             }
             & i /*icone de l'animation "valider menu"*/
                 {
                 animation: roll 600ms ease-out;
                 }
-            .text--menu
-            {
-                animation:slide--width 600ms ease alternate;
-                animation-iteration-count: 2;
-            }   
         }
         & h3
         {
@@ -93,6 +92,57 @@
         }
     }
 }
+i[class="fa-solid fa-heart"] /*coeur "solid"*/
+{
+    opacity: 0;
+    color:transparent; /* vu que l'icone est considéré comme un texte, le rend transparent */
+    background:linear-gradient(to bottom left,$color_primary,$color_secondary);
+    background-clip: text; /*s'étend jusqu'à la limite de la boite de remplissage ici considéré comme un texte (heart est dans une balise <i>) */
+    
+    &:hover
+    { 
+    animation: heart ease-in 300ms forwards;
+    }
+}
+.cards--menu h1 i[class="fa-solid fa-heart"] /*coeur "solid" dans les menu*/
+{
+    padding-left:18px;
+}
+.check /* background bouton check menu*/
+{
+    height:100%;
+    width:18%;
+    font-size: $font-size__titre;
+    color:invert($color: #000000);
+    background-color: $color_tertiary;
+    border:none;
+    position: absolute;
+    right:-20%;
+    animation: slide__check--reverse ease 600ms forwards;
+}
+header a /*fleche retour accueil */
+{
+    position:absolute;
+    left:6%;
+    font-size: $font-size__titre;
+    color:darken($color: $color_background, $amount: 75%)
+}
+header a:active /* fleche retour index*/
+{ 
+    color:$color_tertiary;
+    font-size: larger;
+    box-shadow: $color_background 0px 5px 5px;
+}
+label i /*icone localisation */
+{
+    position:absolute;
+    left:23%;
+    top:25px;
+    color: darken($color: $color_background, $amount: 75%);
+    &:hover{
+        cursor:pointer;
+    }
+}
 .photo_restaurant
 {
     height: 69%;
@@ -110,6 +160,7 @@
     display: inline-flex;
     width:100%;
     justify-content: space-between;
+    animation: slide--width--reverse 600ms ease forwards;
 
     & span {
         height:100%;
@@ -202,7 +253,7 @@ nav li:hover /* liste navigation "fonctionnement" */
         color: $color_primary;
     }
 }
-ul
+ul /* ul "fonctionnement" */
 {
     margin-top: 27px;
     height:265px;

@@ -33,15 +33,24 @@
 }
 @keyframes slide__check /*animation bouton check menu*/
 {
-    from{}
+    from{right:-20%}
     to {right:0%}
+}
+@keyframes slide__check--reverse
+{
+    from{right:0%}
+    to {right:-20%}
 }
 @keyframes slide--width
 {
     from{}
     to{width:80%}
 }
-
+@keyframes slide--width--reverse
+{
+    from{width:80%}
+    to{width:100%}
+}
 @keyframes roll /*icone "valider menu"*/
 {
     from{
@@ -90,16 +99,6 @@
     }
     100%{
         transform: scale(0);
-    }
-}
-@keyframes slide__text
-{
-    from{
-        transform-origin: left;
-        width: 100%;
-    }
-    to{
-        width:75%;
     }
 }
 @keyframes appear
