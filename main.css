@@ -669,7 +669,11 @@ footer h4 {
 
 footer i {
   font-size: 15px;
-  margin-right: 20px;
+  margin-right: 13px;
+}
+
+i[class="fa-solid fa-handshake-angle"] {
+  margin-right: 8px;
 }
 
 footer a {

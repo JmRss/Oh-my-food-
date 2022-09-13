@@ -26,10 +26,15 @@ footer h4
     font-weight: lighter;
     font-size: 16px;
 }
-footer i
-{
+
+footer i /* icone "couverts" */
+    {
     font-size: 15px;
-    margin-right:20px;
+    margin-right:13px;
+    }
+i[class="fa-solid fa-handshake-angle"] /* icone "mains" dans le footer*/
+{
+    margin-right: 8px;
 }
 footer a
 {
